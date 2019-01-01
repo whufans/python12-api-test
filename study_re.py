@@ -5,7 +5,6 @@
 @email:3126972006@qq.com
 @function： 
 """
-import re
 
 # 正则表达式完成字符串的查找
 # s1 = 'world hello'
@@ -17,9 +16,6 @@ import re
 # print(res1)
 # # 变量名#
 s = '{"mobilephone":"${normal_user}","pwd":"${pwd}"}'
-
-
-
 
 # # 目标字符串
 # res4 = re.findall(pattern='(\d{11})',string=s)
@@ -40,6 +36,29 @@ s = '{"mobilephone":"${normal_user}","pwd":"${pwd}"}'
 # print(m.group(2))  # 拿到第二个分组里面的字符
 
 
+import json
+import re
+
+# 使用字典解析 解析-遍历-判断-统计
+with open('loads.txt', 'r', encoding='utf-8') as fp:  # 打开文件
+    financelog = json.load(fp)  # 文件对象序列化成字典
+    datas = financelog['data']  # 获取data列表
+    flag = 0
+    for data in datas: # 遍历列表
+        if data['status'] == '1':  # 判断是否等于1
+            flag += 1  # 统计status=1
+    print("status=1 的条数为：", flag)
+
+# 使用正则解析 匹配并查找
+financelog = open('loads.txt', 'r', encoding='utf-8').read()  # 读取文件里面的内容并返回一个字符串
+status = re.findall('"status": "1"', financelog)  # 匹配在目标字符串中查找"status": "1"的内容，放到一个列表里面
+print("status=1 的条数为：", len(status))  # 获取列表的长度就代表有多少条"status": "1"的数据
 
 
+#findall
+s = '{"mobilephone":"${normal_user}","pwd":"${pwd}"}'
+pattern = '\$\{(.*?)\}'
+ss = re.findall(pattern,s)
+print(ss)
 
+re.sub(pattern,'aaa',s)

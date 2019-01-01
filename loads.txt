@@ -1,0 +1,37 @@
+{
+    "status": 1,
+    "code": "10001",
+    "data": [
+        {
+            "id": "99274",
+            "createTime": "2018-12-19 16:52:22.0",
+            "payMemberId": "42332",
+            "incomeMemberId": "42332",
+            "amount": "999900.00",
+            "incomeMemberMoney": "-998839.67",
+            "payMemberMoney": "-998839.67",
+            "status": "1"
+        },
+        {
+            "id": "99264",
+            "createTime": "2018-12-19 16:50:52.0",
+            "payMemberId": "42332",
+            "incomeMemberId": "42332",
+            "amount": "100.00",
+            "incomeMemberMoney": "1060.33",
+            "payMemberMoney": "1060.33",
+            "status": "1"
+        },
+        {
+            "id": "99190",
+            "createTime": "2018-12-19 16:04:51.0",
+            "payMemberId": "42332",
+            "incomeMemberId": "0",
+            "amount": "30.00",
+            "incomeMemberMoney": null,
+            "payMemberMoney": "160.33",
+            "status": "0"
+        }
+    ],
+    "msg": "获取用户流水记录成功！"
+}

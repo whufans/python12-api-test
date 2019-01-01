@@ -18,7 +18,12 @@ case_file = os.path.join(datas_dir, 'cases.xlsx')
 # print(datas_dir)
 
 reports_dir = os.path.join(base_dir, 'reports')  # reports文件夹路径
+reports_html = os.path.join(reports_dir, 'reports.html')  # reports文件夹路径
 # print(reports_dir)
 
 logs_dir = os.path.join(base_dir, 'logs')  # logs文件夹路径
+logs_file = os.path.join(logs_dir, 'logs.log')  # logs文件夹路径
+error_file = os.path.join(logs_dir, 'error.log')  # logs文件夹路径
 # print(logs_dir)
+
+testcases_dir = os.path.join(base_dir, 'testcases')  # logs文件夹路径

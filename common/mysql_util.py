@@ -27,18 +27,21 @@ class MysqlUtil:
         password = config.get('mysql', 'pwd')
         # 异常处理
         self.mysql = pymysql.connect(host=host, user=user, password=password,
-                                     port=port,cursorclass=pymysql.cursors.DictCursor)
+                                     port=port, cursorclass=pymysql.cursors.DictCursor)
 
     def fetch_one(self, sql):  # 查询一条数据并返回
         cursor = self.mysql.cursor()
         cursor.execute(sql)  # 根据sql 进行查询
-        return cursor.fetchone() #
+        return cursor.fetchone()  #
 
     def fetch_all(self, sql):  # 查询多条数据并返回
         cursor = self.mysql.cursor()
 
         cursor.execute(sql)  # 根据sql 进行查询
-        return cursor.fetchall() # ((),())
+        return cursor.fetchall()  # ((),())
+
+    def close(self):
+        self.mysql.close()
 
 
 if __name__ == '__main__':
@@ -48,5 +51,4 @@ if __name__ == '__main__':
     mysql_util = MysqlUtil()
     results = mysql_util.fetch_one(sql)
     # print(results[1])  # 不知道是哪一列
-    print(results['mobilephone'])  # 不知道是哪一列
-
+    print(results['mobilephone'])  # 根据字典的KEY进行取值

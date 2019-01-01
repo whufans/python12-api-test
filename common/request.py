@@ -49,7 +49,6 @@ class Request:
         return json_dict
 
     def get_cookies(self, key=None):  # 返回cookies
-        print(self.resp.cookies)
         if key is not None:
             return self.resp.cookies[key]
         else:

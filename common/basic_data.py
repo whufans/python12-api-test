@@ -27,9 +27,15 @@ from common.config import ConfigLoader
 
 class Context:
     config = ConfigLoader()
+    # 投资人测试数据
     normal_user = config.get('basic', 'normal_user')
-    pwd = config.get('basic', 'pwd')
-
+    normal_pwd = config.get('basic', 'normal_pwd')
+    normal_member_id = config.get('basic', 'normal_member_id')
+    # 管理员测试数据
+    admin_user = config.get('basic', 'admin_user')
+    admin_pwd = config.get('basic', 'admin_pwd')
+    # 借款人测试数据
+    loan_member_id = config.get('basic', 'loan_member_id')
 
 if __name__ == '__main__':
     normal_user = getattr(Context, 'normal_user')  # 获取变量的值
